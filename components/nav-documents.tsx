@@ -43,7 +43,7 @@ export function NavDocuments({
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel>Documents</SidebarGroupLabel>
+      <SidebarGroupLabel className="text-neutral-200">Documents</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => {
           const isActive = pathname === item.url
@@ -56,7 +56,7 @@ export function NavDocuments({
                   isActive && "bg-blue-500 text-white hover:bg-blue-500"
                 )}
               >
-                <a href={item.url} className="flex items-center gap-2">
+                <a href={item.url} className="flex items-center gap-2 text-white">
                   <item.icon />
                   <span>{item.name}</span>
                 </a>
@@ -66,7 +66,7 @@ export function NavDocuments({
                 <DropdownMenuTrigger asChild>
                   <SidebarMenuAction
                     showOnHover
-                    className="data-[state=open]:bg-accent rounded-sm"
+                    className="data-[state=open]:bg-accent rounded-sm text-white"
                   >
                     <IconDots />
                     <span className="sr-only">More</span>

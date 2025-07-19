@@ -67,38 +67,39 @@ export function SectionCards() {
   }, [quotes])
 
   return (
-    <div className="relative flex min-h-[250px] items-center justify-center px-4 lg:px-6">
-      {loading ? (
-        <Card className="max-w-xl animate-pulse bg-muted p-8 text-center text-muted-foreground">
-          Loading climate quotes...
+   <div className="relative flex min-h-[250px] items-center justify-center px-4 lg:px-6">
+  {loading ? (
+    <Card className="max-w-xl animate-pulse rounded-2xl bg-gradient-to-r from-slate-200 via-slate-100 to-slate-50 dark:from-muted dark:via-muted-foreground/20 dark:to-muted-foreground/10 p-8 text-center text-muted-foreground shadow-lg">
+      Loading climate quotes...
+    </Card>
+  ) : (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -30 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="w-full max-w-5xl"
+      >
+        <Card className="rounded-3xl border border-slate-200 bg-gradient-to-br from-[#e0f7fa] via-white to-[#e3f2fd] dark:from-[#1e1e2f] dark:via-[#2e2e3f] dark:to-[#1e1e2f] shadow-xl transition-shadow hover:shadow-2xl">
+          <CardHeader className="px-6 pt-6 pb-3">
+            <CardTitle className="text-center text-1xl font-bold text-slate-700 dark:text-slate-100 md:text-3xl">
+              <TypewriterText key={index} text={`"${quotes[index]?.text}"`} />
+            </CardTitle>
+            <CardDescription className="mt-3 text-center text-base italic text-slate-600 dark:text-slate-400">
+              – {quotes[index]?.author}
+            </CardDescription>
+          </CardHeader>
+          <CardFooter className="pb-6 pt-2 text-center text-sm font-medium text-slate-500 dark:text-slate-400">
+            🌿 Environmental Inspiration #{index + 1}
+          </CardFooter>
         </Card>
-      ) : (
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
-            transition={{ duration: 0.6 }}
-            className="w-full max-w-5xl"
-          >
-            <Card className="@container/card bg-gradient-to-br from-slate-100/70 to-neutral-100/50 dark:from-muted dark:to-muted-foreground/20 shadow-md">
-              <CardHeader>
-                <CardTitle className="text-center text-xl font-semibold md:text-2xl">
-                  <TypewriterText key={index} text={`"${quotes[index]?.text}"`} />
-                </CardTitle>
-                <CardDescription className="mt-2 text-center text-base italic text-muted-foreground">
-                  – {quotes[index]?.author}
-                </CardDescription>
-              </CardHeader>
-              <CardFooter className="justify-center text-sm text-muted-foreground">
-                Environmental Inspiration #{index + 1}
-              </CardFooter>
-            </Card>
-          </motion.div>
-        </AnimatePresence>
-      )}
-    </div>
+      </motion.div>
+    </AnimatePresence>
+  )}
+</div>
+
   )
 }
 

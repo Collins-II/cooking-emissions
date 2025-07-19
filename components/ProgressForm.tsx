@@ -15,6 +15,7 @@ import {
   Flame, Droplet, PlugZap, Fuel, Leaf, Zap, LeafyGreen,
 } from "lucide-react";
 import { GiCampfire } from "react-icons/gi";
+import { EmissionResultsType, EmissionsSummary } from "./emissions-summary";
 
 
 // Types
@@ -33,11 +34,6 @@ interface FormState {
   householdSize: string;
 }
 
-interface EmissionResult {
-  baselineEmissions: string;
-  projectEmissions: string;
-  emissionReductions: string;
-}
 
 // Stove + Fuel Options
 const stoveOptions: OptionType[] = [
@@ -85,7 +81,7 @@ export function ProgressForm() {
     householdSize: "",
   });
 
-  const [results, setResults] = useState<EmissionResult | null>(null);
+  const [results, setResults] = useState<EmissionResultsType | null>(null);
 
   const totalSteps = 6;
   const progressPercent = ((step - 1) / totalSteps) * 100;
@@ -93,7 +89,7 @@ export function ProgressForm() {
   const updateField = (key: keyof FormState, value: string) =>
     setForm((prev) => ({ ...prev, [key]: value }));
 
-  const calculate = (): EmissionResult => {
+  const calculate = (): EmissionResultsType => {
     const EF = emissionFactors[form.fuelType] || 0.002;
     const fuel = parseFloat(form.dailyFuelUse || "0") * 30;
     const eb = fuel * EF / 0.10;
@@ -233,11 +229,7 @@ export function ProgressForm() {
 
           {step === totalSteps + 1 && results && (
             <>
-              <div className="space-y-2 text-sm">
-                <p><strong>Baseline Emissions:</strong> {results.baselineEmissions} tCO₂e/month</p>
-                <p><strong>Project Emissions:</strong> {results.projectEmissions} tCO₂e/month</p>
-                <p><strong>Emission Reductions:</strong> {results.emissionReductions} tCO₂e/month</p>
-              </div>
+             <EmissionsSummary results={results as EmissionResultsType} />
 
               {/* Uncomment if using chart
               <EmissionsChart data={[{

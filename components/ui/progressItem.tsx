@@ -37,12 +37,12 @@ export default function ProgressItem({
 }: ProgressItemProps) {
   return (
     <div className="flex flex-col w-full bg-white">
-      <p className="text-xl text-slate-900 font-semibold">
-        <span className="text-blue-500">{step.toString().padStart(2, "0")}</span>{" "}
+      <p className="text-md text-slate-900 font-light">
+        <span className="text-red-500">{step.toString().padStart(2, "0")}</span>{" "}
         {title}
       </p>
       <Progress value={progressPercent} className="h-2 mb-4 mt-2" />
-      <h3 className="text-md font-light">{description}</h3>
+      <h3 className="text-sm font-light">{description}</h3>
 
       {options && onSelect && (
         <div className="mt-4 space-y-3">

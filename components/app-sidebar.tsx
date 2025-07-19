@@ -172,7 +172,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     sizes="20px"
                   />
                 </div>
-                <span className="text-base font-semibold">Carbon Yanga.</span>
+                <span className="text-white text-xl font-light">Carbon Yanga.</span>
               </Link>
 
             </SidebarMenuButton>

@@ -34,7 +34,7 @@ export function NavMain({
           <SidebarMenuItem className="flex items-center gap-2">
             <SidebarMenuButton
               tooltip="Quick Create"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/90 min-w-8"
+              className="bg-white text-white-foreground hover:bg-black/90 hover:text-white active:bg-black/90 min-w-8"
             >
               <IconCirclePlusFilled />
               <span>Quick Create</span>
@@ -42,11 +42,12 @@ export function NavMain({
 
             <Button
               size="icon"
-              className="size-8 group-data-[collapsible=icon]:opacity-0"
+              className="relative size-8 group-data-[collapsible=icon]:opacity-0"
               variant="outline"
             >
               <IconMail />
               <span className="sr-only">Inbox</span>
+              <p className="absolute top-0 right-0 rounded-full flex justify-center items-center text-slate-600 text-[10px] px-1">3</p>
             </Button>
           </SidebarMenuItem>
         </SidebarMenu>
@@ -58,11 +59,11 @@ export function NavMain({
               <SidebarMenuItem key={item.title} onClick={() => handleClick(item.url)}>
                 <SidebarMenuButton
                   tooltip={item.title}
-                  className={`${
+                 className={`${
                     isActive
-                      ? "bg-blue-500 text-white hover:bg-blue-500 font-semibold"
-                      : "hover:bg-blue-500"
-                  } transition-colors duration-200 flex items-center gap-2`}
+                      ? "bg-white text-blue-900 font-semibold"
+                      : "hover:bg-white hover:text-blue-900 text-white"
+                  } transition-colors duration-200 flex items-center gap-2 `}
                 >
                   {item.icon && <item.icon />}
                   <span>{item.title}</span>
