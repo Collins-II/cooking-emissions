@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+  directUrl      = env("DIRECT_DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId // MongoDB uses ObjectId
+  name         String
+  contact      String   // can be email or phone
+  passwordHash String   @map("password_hash")
+  userType     UserType @default(student)  
+  studentId    String?
+  stoveUsages  StoveUsage[]
+  createdAt    DateTime @default(now()) @map("created_at")
+}
+
+model StoveUsage {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId // MongoDB uses ObjectId
+  userId         String   @db.ObjectId// Foreign key reference (manual in MongoDB)
+  user           User?    @relation(fields: [userId], references: [id])
+  stoveType      String
+  fuelType       String
+  dailyFuelUse   Float
+  dailyHours     Float
+  efficiency     Float
+  householdSize  Int
+  emissionTotal  Float
+  createdAt      DateTime @default(now()) @map("created_at")
+}
+
+
+enum UserType {
+  student
+  staff
+}
+
