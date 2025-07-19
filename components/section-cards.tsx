@@ -76,9 +76,9 @@ export function SectionCards() {
     <AnimatePresence mode="wait">
       <motion.div
         key={index}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -30 }}
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -30 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="w-full max-w-5xl"
       >
