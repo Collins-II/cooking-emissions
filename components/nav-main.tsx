@@ -1,8 +1,8 @@
 "use client"
 
 import { usePathname, useRouter } from "next/navigation"
-import { IconCirclePlusFilled, IconMail, type Icon } from "@tabler/icons-react"
-import { Button } from "@/components/ui/button"
+import { type Icon } from "@tabler/icons-react"
+//import { Button } from "@/components/ui/button"
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -30,7 +30,7 @@ export function NavMain({
   return (
     <SidebarGroup>
       <SidebarGroupContent className="flex flex-col gap-2">
-        <SidebarMenu>
+        {/*<SidebarMenu>
           <SidebarMenuItem className="flex items-center gap-2">
             <SidebarMenuButton
               tooltip="Quick Create"
@@ -50,7 +50,7 @@ export function NavMain({
               <p className="absolute top-0 right-0 rounded-full flex justify-center items-center text-slate-600 text-[10px] px-1">3</p>
             </Button>
           </SidebarMenuItem>
-        </SidebarMenu>
+        </SidebarMenu> */}
 
         <SidebarMenu>
           {items.map((item) => {

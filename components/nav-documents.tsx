@@ -1,33 +1,33 @@
 "use client"
 
 import {
-  IconDots,
+  /*IconDots,
   IconFolder,
   IconShare3,
-  IconTrash,
+  IconTrash,*/
   type Icon,
 } from "@tabler/icons-react"
 
-import {
+/*import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu" */
 
 import {
   SidebarGroup,
   SidebarGroupLabel,
   SidebarMenu,
-  SidebarMenuAction,
+  //SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
-  useSidebar,
+ // useSidebar,
 } from "@/components/ui/sidebar"
 
 import { usePathname } from "next/navigation"
-import clsx from "clsx"
+//import clsx from "clsx"
 
 export function NavDocuments({
   items,
@@ -38,7 +38,7 @@ export function NavDocuments({
     icon: Icon
   }[]
 }) {
-  const { isMobile } = useSidebar()
+  //const { isMobile } = useSidebar()
   const pathname = usePathname()
 
   return (
@@ -52,17 +52,19 @@ export function NavDocuments({
             <SidebarMenuItem key={item.name}>
               <SidebarMenuButton
                 asChild
-                className={clsx(
-                  isActive && "bg-blue-500 text-white hover:bg-blue-500"
-                )}
+                className={`${
+                    isActive
+                      ? "bg-white text-blue-900 font-semibold"
+                      : "hover:bg-white hover:text-blue-900 text-white"
+                  } transition-colors duration-200 flex items-center gap-2 `}
               >
-                <a href={item.url} className="flex items-center gap-2 text-white">
+                <a href={item.url} className="flex items-center gap-2">
                   <item.icon />
                   <span>{item.name}</span>
                 </a>
               </SidebarMenuButton>
 
-              <DropdownMenu>
+             {/*<DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <SidebarMenuAction
                     showOnHover
@@ -92,7 +94,7 @@ export function NavDocuments({
                     <span>Delete</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
-              </DropdownMenu>
+              </DropdownMenu> */} 
             </SidebarMenuItem>
           )
         })}

@@ -87,11 +87,11 @@ export default function EmissionsSummaryPage() {
 
   return (
     <main className="container mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-center mb-4">Emissions Summary</h1>
+      <h1 className="text-green-800 text-3xl font-bold text-center mb-4">Emissions Summary</h1>
       <p className="text-center text-muted-foreground mb-10">
         A breakdown of your cooking emissions by fuel type and daily usage.
       </p>
-<div className="flex gap-2 mb-4">
+         <div className="flex gap-2 mb-4">
             <Button onClick={handlePDF} variant="outline">
               <FileText className="mr-2 h-4 w-4" />
               PDF

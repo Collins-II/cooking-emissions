@@ -163,12 +163,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
               <Link href="/" className="flex gap-2 items-center">
-                <div className="relative w-5 h-5">
+                <div className="relative w-7 h-7 py-1">
                   <Image
                     src="/images/carbon-logo.jpg"
                     alt="Logo"
                     fill
-                    className="rounded-full object-cover"
+                    className="rounded-full object-cover shadow-md shadow-white"
                     sizes="20px"
                   />
                 </div>

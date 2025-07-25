@@ -82,7 +82,7 @@ export default function ReportsPage() {
   return (
     <div className="w-full max-w-6xl px-4 py-10 space-y-8">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <h1 className="text-2xl font-bold">Carbon Reports</h1>
+        <h1 className="text-green-800 text-2xl font-bold">Carbon Reports</h1>
         <Select value={selectedFilter} onValueChange={setSelectedFilter}>
           <SelectTrigger className="w-[200px]">
             <SelectValue placeholder="Filter by period" />
@@ -159,7 +159,7 @@ export default function ReportsPage() {
           <p><strong>Total Credits:</strong> {totalCredits}</p>
         </div>
         <div className="flex gap-4">
-          <Button onClick={handleDownloadPDF}>Download PDF</Button>
+          <Button className="bg-green-700" onClick={handleDownloadPDF}>Download PDF</Button>
           <Button onClick={handleDownloadCSV} variant="outline">
             Download CSV
           </Button>

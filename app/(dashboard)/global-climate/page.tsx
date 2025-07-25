@@ -87,7 +87,7 @@ export default function GlobalClimateDataPage() {
   return (
     <div className="w-full max-w-6xl px-4 py-10 space-y-8">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <h1 className="text-2xl font-bold">Global Climate Data</h1>
+        <h1 className="text-green-800 text-2xl font-bold">Global Climate Data</h1>
         <Select value={selectedRegion} onValueChange={setSelectedRegion}>
           <SelectTrigger className="w-[220px]">
             <SelectValue placeholder="Select Region" />
@@ -152,7 +152,7 @@ export default function GlobalClimateDataPage() {
           Source: Simulated environmental data (2025)
         </p>
         <div className="flex gap-4">
-          <Button onClick={handlePDF}>Download PDF</Button>
+          <Button className="bg-green-700" onClick={handlePDF}>Download PDF</Button>
           <Button variant="outline" onClick={handleCSV}>
             Download CSV
           </Button>

@@ -253,7 +253,7 @@ export function ProgressForm() {
             <Button variant="outline" onClick={handleBack}>Back</Button>
           )}
           {step <= totalSteps && (
-            <Button onClick={step === totalSteps ? handleFinish : handleNext}>
+            <Button className="bg-green-700" onClick={step === totalSteps ? handleFinish : handleNext}>
               {step === totalSteps ? "Finish" : "Next"}
             </Button>
           )}

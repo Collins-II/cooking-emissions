@@ -38,7 +38,7 @@ export default function ProgressItem({
   return (
     <div className="flex flex-col w-full bg-white">
       <p className="text-md text-slate-900 font-light">
-        <span className="text-red-500">{step.toString().padStart(2, "0")}</span>{" "}
+        <span className="text-green-900">{step.toString().padStart(2, "0")}</span>{" "}
         {title}
       </p>
       <Progress value={progressPercent} className="h-2 mb-4 mt-2" />

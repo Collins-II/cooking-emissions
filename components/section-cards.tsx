@@ -80,9 +80,9 @@ export function SectionCards() {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -30 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="w-full max-w-5xl"
+        className="w-full max-w-6xl"
       >
-        <Card className="rounded-3xl border border-slate-200 bg-gradient-to-br from-[#e0f7fa] via-white to-[#e3f2fd] dark:from-[#1e1e2f] dark:via-[#2e2e3f] dark:to-[#1e1e2f] shadow-xl transition-shadow hover:shadow-2xl">
+        <Card className="rounded-3xl border border-slate-200 bg-gradient-to-br from-[#8bf3ba] via-white to-[#91ffc8] dark:from-[#1e1e2f] dark:via-[#2e2e3f] dark:to-[#1e1e2f] shadow-xl transition-shadow hover:shadow-2xl">
           <CardHeader className="px-6 pt-6 pb-3">
             <CardTitle className="text-center text-1xl font-bold text-slate-700 dark:text-slate-100 md:text-3xl">
               <TypewriterText key={index} text={`"${quotes[index]?.text}"`} />

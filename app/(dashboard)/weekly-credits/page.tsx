@@ -72,7 +72,7 @@ export default function WeeklyCreditsPage() {
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-10 space-y-8">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <h1 className="text-2xl font-bold">Weekly Carbon Credits</h1>
+        <h1 className="text-green-800 text-2xl font-bold">Weekly Carbon Credits</h1>
         <Select value={selectedRange} onValueChange={setSelectedRange}>
           <SelectTrigger className="w-[200px]">
             <SelectValue placeholder="Filter by week" />
@@ -147,7 +147,7 @@ export default function WeeklyCreditsPage() {
           <p><strong>Total Used:</strong> {totalUsed} credits</p>
         </div>
         <div className="flex gap-4">
-          <Button onClick={handlePDF}>Download PDF</Button>
+          <Button className="bg-green-700" onClick={handlePDF}>Download PDF</Button>
           <Button onClick={handleCSV} variant="outline">Download CSV</Button>
         </div>
       </div>

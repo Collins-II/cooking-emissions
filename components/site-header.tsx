@@ -12,10 +12,10 @@ export function SiteHeader() {
           orientation="vertical"
           className="mx-2 data-[orientation=vertical]:h-4"
         />
-        <h1 className="text-base font-medium">Cooking Emissions Dashboard</h1>
+        <h1 className="text-green-800 text-xl font-medium">Cooking Emissions Dashboard</h1>
         <div className="ml-auto flex items-center gap-2">
           <Button variant="ghost" asChild size="sm" className="hidden sm:flex rounded-full">
-            <div className="relative w-10 h-10">
+            <div className="relative w-8 h-8">
                 <Image
                   src="/images/users/userk2.jpg"
                   alt="Logo"
